@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function isPalindrome(str) {
+    // Convert the string to lowercase and remove non-alphanumeric characters
+    const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    
+    // Reverse the string
+    const reversedStr = cleanStr.split('').reverse().join('');
+    
+    // Check if the original and reversed strings are the same
+    return cleanStr === reversedStr;
+}
+
+// Test the function
+const testString1 = "A man, a plan, a canal, Panama!";
+const testString2 = "Hello, world!";
+
+console.log(`"${testString1}" is a palindrome: ${isPalindrome(testString1)}`);
+console.log(`"${testString2}" is a palindrome: ${isPalindrome(testString2)}`);
+
+
+const numbers = [5, 8, 3, 12, 1];
+
+// Function to find minimum number
+function findMinimum(arr) {
+    return Math.min(...arr);
+}
+
+// Function to find maximum number
+function findMaximum(arr) {
+    return Math.max(...arr);
+}
+
+// Call the functions
+const minimum = findMinimum(numbers);
+const maximum = findMaximum(numbers);
+
+console.log("Minimum number:", minimum);
+console.log("Maximum number:", maximum);
+//missing number
+
+function findMissingNumber(arr) {
+    // Sort the array in ascending order
+    arr.sort((a, b) => a - b);
+    
+    // Iterate through the sorted array to find the missing number
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + 1 !== arr[i + 1]) {
+            return arr[i] + 1; // Found the missing number
+        }
+    }
+    
+    // If no missing number is found
+    return "No missing number";
+};
+
+// Example usage
+const number = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+console.log("Missing number:", findMissingNumber(numbers));
+
+
+    </script>
+</body>
+</html>
